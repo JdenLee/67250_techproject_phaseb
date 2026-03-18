@@ -1,0 +1,78 @@
+var x = 5;
+var y = 7;
+var z = x + y;
+console.log(z);
+
+var A = 'Hello';
+var B = 'world!';
+var C = A + B;
+console.log(C);
+
+function sumPrint(x1, y1) {
+    console.log(x1 + y1);
+}
+
+sumPrint(x, y);
+sumPrint(A, B);
+
+if (C.length > z) {
+    console.log(C);
+    if (C.length < z) {
+        console.log(z);
+    }
+}
+else {
+    console.log('good job!');
+}
+
+L1 = ["Watermelon","Pineapple","Pear","Banana"];
+L2 = ["Apple","Banana","Kiwi","Orange"];
+
+// function findTheBanana(list) {
+//     for (let fruit of list) {
+//         if (fruit === 'Banana'){
+//             alert('Banana found');
+//         }
+//     }
+// }
+
+function findTheBanana(list) {
+    list.forEach(function(fruit) {
+        if (fruit === 'Banana') {
+            alert("Banana found!");
+        }
+    });
+}
+
+// findTheBanana(L1);
+// findTheBanana(L2);
+
+var now = new Date()
+var hour = now.getHours()
+
+function greeting(x){
+    let message;
+
+    if(x < 5 || x >= 20) {
+        message = "Good night";
+    } else if (x < 12) {
+        message = "Good morning";
+    } else if (x < 18) {
+        message = "Good afternoon";
+    } else {
+        message = "Good evening";
+    }
+
+    document.getElementById("greeting").innerHTML = message;
+}
+
+greeting(hour);
+
+function addYear() {
+    const year = new Date().getFullYear();
+
+    const copyYear = document.getElementById("copyYear");
+
+    copyYear.textContent = year;
+
+}
