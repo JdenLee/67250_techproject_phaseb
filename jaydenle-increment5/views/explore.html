@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore</title>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+
+    <link rel="stylesheet" href="../static/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script defer src="../static/script.js"></script>
+</head>
+
+<body onload="addYear()">
+    <div class="container">
+        <img id="logo" src="../static/PlantLogo.png" alt="MonoMuse Museum Logo">
+
+        <nav class="nav_bar">
+            <button class="hamburger" id="hamburger" aria-label="Open navigation menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="./explore.html">Explore</a></li>
+                <li><a href="./exhibitions.html">Exhibitions</a></li>
+                <li><a href="./tickets.html">Buy Tickets</a></li>
+                <li><a href="./checkout.html">Checkout</a></li>
+            </ul>
+        </nav>
+
+        <main class="main">
+            <h2>Explore the Museum</h2>
+            <p>Watch a short introduction to what MonoMuse has to offer, then find us on the map below.</p>
+
+        
+            <h3>About Art Museums</h3>
+            <div class="video-wrapper">
+                <iframe
+                    src="https://www.youtube.com/embed/hfKymoH9XTc"
+                    title="About Art Museums">
+                </iframe>
+            </div>
+
+            <h3>Find Us</h3>
+            <p>MonoMuse Museum — Pittsburgh, PA</p>
+            <div id="map"></div>
+        </main>
+
+        <footer class="footer">
+            <p id="copyYear"></p>
+        </footer>
+    </div>
+</body>
+
+</html>
