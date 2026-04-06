@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tickets</title>
+    <link rel="stylesheet" href="../static/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <script defer src="../static/script.js"></script>
+</head>
+
+<body onload="addYear()">
+    <div class="container">
+        <header class="header">
+            <img id="logo" src="../static/monomuselogo.png" alt="MonoMuse Museum Logo">
+            <h1>Buy Tickets</h1>
+            <p>Choose your ticket type, browse available dates, and click Buy Now to complete your purchase.</p>
+        </header>
+
+        <nav class="nav_bar">
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="./explore.html">Explore</a></li>
+                <li><a href="./exhibitions.html">Exhibitions</a></li>
+                <li><a href="./tickets.html">Buy Tickets</a></li>
+                <li><a href="./checkout.html">Checkout</a></li>
+            </ul>
+        </nav>
+
+        <main class="main">
+            <h2>Ticket Prices</h2>
+            <table class="ticket-table">
+                <tr>
+                    <th>Ticket Type</th>
+                    <th>Price</th>
+                </tr>
+                <tr>
+                    <td>Adult</td>
+                    <td>$18</td>
+                </tr>
+                <tr>
+                    <td>Student</td>
+                    <td>$12</td>
+                </tr>
+                <tr>
+                    <td>Child</td>
+                    <td>$8</td>
+                </tr>
+                <tr>
+                    <td>Member</td>
+                    <td>Free</td>
+                </tr>
+            </table>
+
+            <h2>March Ticket Schedule</h2>
+            <table class="ticket-table">
+                <tr>
+                    <th>Date</th>
+                    <th>Time</th>
+                    <th>Availability</th>
+                    <th>Action</th>
+                </tr>
+                <tr>
+                    <td>March 26, 2026</td>
+                    <td>10:00 AM</td>
+                    <td>Available</td>
+                    <td>
+                        <button class="ticket-button" onclick="showPurchaseForm('March 26, 2026')">Buy Now</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>March 27, 2026</td>
+                    <td>1:00 PM</td>
+                    <td>Available</td>
+                    <td>
+                        <button class="ticket-button" onclick="showPurchaseForm('March 27, 2026')">Buy Now</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>March 28, 2026</td>
+                    <td>3:00 PM</td>
+                    <td>Available</td>
+                    <td>
+                        <button class="ticket-button" onclick="showPurchaseForm('March 28, 2026')">Buy Now</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>March 29, 2026</td>
+                    <td>11:00 AM</td>
+                    <td>Available</td>
+                    <td>
+                        <button class="ticket-button" onclick="showPurchaseForm('March 29, 2026')">Buy Now</button>
+                    </td>
+                </tr>
+            </table>
+
+            <section id="purchaseFormSection">
+                <h2>Purchase Form</h2>
+                <form id="purchaseForm">
+                    <label for="visitorName">Name</label>
+                    <input type="text" id="visitorName" name="visitorName" required>
+
+                    <label for="visitorEmail">Email</label>
+                    <input type="email" id="visitorEmail" name="visitorEmail" required>
+
+                    <label for="ticketCount">Number of Tickets</label>
+                    <input type="number" id="ticketCount" name="ticketCount" min="1" max="10" required>
+
+                    <label for="selectedDate">Selected Date</label>
+                    <input type="text" id="selectedDate" name="selectedDate" readonly>
+
+                    <button type="button" class="ticket-button" onclick="submitPurchase()">Submit</button>
+                </form>
+            </section>
+        </main>
+
+
+        <footer class="footer">
+            <p id="copyYear"></p>
+        </footer>
+    </div>
+
+</body>
+
+</html>

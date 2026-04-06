@@ -1,0 +1,186 @@
+* {
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 100;
+    line-height: 1.5;
+    padding: 5px;
+    margin: 5px;
+    background: transparent;
+    color: border-box;
+}
+
+body {
+    background: #0b0b0c;
+    color: #f5f5f7;
+    padding: 20px;
+}
+
+.container {
+  display: grid; /* Turns this div into a CSS Grid layout */
+  grid-template-areas:   /* Defines the layout structure */
+    'header header'
+    'nav_bar nav_bar'
+    'main main-img'
+    'footer footer';
+}
+
+/* Places each element into the correct area of the grid */
+.header {
+   grid-area: header; 
+}
+.nav_bar {
+   grid-area: nav_bar;
+   display: flex; /* Uses Flexbox for internal layout */
+   justify-content: flex-end;
+   align-items: center;  
+}
+.main {
+  grid-area: main; 
+}
+.main_img {
+   grid-area: main-img; 
+   display:flex;
+   justify-content: center;
+   align-items: center;
+}
+.footer {
+   grid-area: footer;
+}
+
+#logo {
+    width: 18%;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.header p {
+    max-width: 900px;
+}
+
+.nav_bar ul {
+    list-style-type: none;
+    display: flex;
+    gap: 16px
+}
+
+.nav_bar li {
+    display:inline;
+}
+
+nav a {
+    text-decoration: none;
+    color: #f5f5f7;
+    font-weight: 400;
+    padding: 8px 10px;
+    border: 1px solid transparent;
+    border-radius: 12px;
+}
+
+nav a:hover {
+    border-color: #4d5c3b;
+}
+
+.active {
+    color: #347682;
+}
+
+.main h2 {
+    margin-bottom: 16px;
+}
+
+.main p {
+    margin-bottom: 16px;
+}
+
+.ticket-button, #readMore, #readLess {
+    background-color: #7ebdcf;
+    color: #0b0b0c;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 500;
+    margin-right: 10px;
+    margin-bottom: 12px;
+}
+
+.ticket-button:hover, #readMore:hover, #readLess:hover {
+    opacity:0.9;
+}
+
+#longIntro {
+    display: none;
+}
+
+#readLess {
+    display: none;
+}
+
+.hero-img {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 16px;
+    display: block;
+}
+
+footer {
+    border-top: 1px solid rgba(245, 245, 247, .12);
+    padding: 18px 16px;
+    text-align: center;
+    color: rgba(245, 245, 247, .72);
+}
+
+#copyYear {
+    font-size : 16px;
+    color:white
+}
+
+.ticket-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 24px;
+}
+
+.ticket-table th,
+.ticket-table td {
+    border: 1px solid #444;
+    padding: 12px;
+    text-align: left;
+}
+
+.ticket-table th {
+    background-color: #1a1a1d;
+}
+
+.ticket-table tr:nth-child(even) {
+    background-color: #161618;
+}
+
+#purchaseFormSection {
+    display: none;
+    margin-top: 30px;
+    padding: 20px;
+    border: 1px solid #444;
+    border-radius: 12px;
+    background-color: #111214;
+}
+
+#purchaseForm {
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+}
+
+#purchaseForm label {
+    margin-top: 10px;
+    font-weight: 400;
+}
+
+#purchaseForm input {
+    padding: 10px;
+    border: 1px solid #666;
+    border-radius: 8px;
+    background-color: #fff;
+    color: #000;
+}
+
