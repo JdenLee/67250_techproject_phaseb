@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Jayden Lee">
+    <meta name="keywords" content="MonoMuse, plant museum, botanical exhibitions, Pittsburgh">
+    <meta name="description" content="MonoMuse - a contemporary plant museum and botanical exhibition space in Pittsburgh, PA.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MonoMuse | Home</title>
+
+    <link rel="stylesheet" href="./static/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- google font -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <!-- jquery cdn -->
+    <script src="https://code.jquery.com/jquery-4.0.0.min.js"
+        integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao=" crossorigin="anonymous"></script>
+    <script defer src="./static/script.js"></script>
+</head>
+
+<body onload="addYear()">
+<div class="container">
+
+    <!-- header -->
+    <header class="header">
+        <img id="logo" src="./static/PlantLogo.png" alt="MonoMuse Museum Logo">
+    </header>
+
+    <!-- navigation -->
+    <nav class="nav_bar" aria-label="Primary navigation">
+        <button class="hamburger" id="hamburger"
+                aria-label="Open navigation menu"
+                aria-expanded="false"
+                aria-controls="nav-list">
+            <span></span><span></span><span></span>
+        </button>
+        <ul id="nav-list">
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="views/explore.html">Explore</a></li>
+            <li><a href="views/exhibitions.html">Exhibitions</a></li>
+            <li><a href="views/membership.html">Membership</a></li>
+            <li><a href="views/tickets.html" class="nav-cta">Buy Tickets</a></li>
+        </ul>
+    </nav>
+
+    <!-- section 1 -->
+    <!-- museum overview -->
+    <section class="main_img" aria-label="Hero banner - Discover The Wonders of Plants">
+        <img id="plantBackground"
+             src="./static/plantbackground.png"
+             alt="Lush monstera plant leaves in black background">
+        <div class="hero-overlay">
+            <div class="hero-text">
+                <!-- headline changes with fade effect -->
+                <h1 id="heroHeadline">Discover The<br>Wonders of Plants</h1>
+                <p class="hero-subtitle">Plant Museum &amp; Botanical Exhibitions</p>
+                <p class="hero-supporting">Immersive exhibitions, living collections, and a unique botanical experiences.</p>
+                <div class="hero-buttons">
+                    <a href="views/exhibitions.html" class="btn btn-primary" id="heroCTA1">Explore Exhibitions</a>
+                    <a href="views/tickets.html"     class="btn btn-outline"  id="heroCTA2">Buy Tickets</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- main -->
+    <main class="main" id="main-content">
+
+        <!-- section 2 -->
+        <section class="home-about" aria-labelledby="about-heading">
+            <h2 id="about-heading" class="section-heading">About MonoMuse</h2>
+            <div class="intro-row">
+                <div class="intro-text">
+                    <p id="shortIntro">
+                        MonoMuse is a contemporary museum dedicated to exploring the intersection of plant life,
+                        art, technology, and human creativity. Through immersive exhibitions, interactive
+                        installations, and rotating living collections, we invite visitors to discover how the
+                        botanical world shapes culture, science, and everyday life.
+                    </p>
+                    <!-- extra intro -->
+                    <p id="longIntro" aria-hidden="true">
+                        Whether you are a first-time visitor or a returning member, our galleries offer new
+                        perspectives on ecology, biodiversity, and digital innovation. Our botanical spaces span
+                        over 12,345 sq ft of living art, housing more than 1,234 plant species from across the
+                        globe. Every visit is unique — the living collections grow and change with the seasons.
+                    </p>
+                </div>
+                <div class="intro-actions">
+                    <button id="readMore" aria-controls="longIntro" aria-expanded="false">Read More</button>
+                    <button id="readLess" aria-controls="longIntro" aria-expanded="true">Read Less</button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- footer -->
+    <footer class="footer">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <strong>MonoMuse Museum</strong>
+                <p>123 Botanical Way<br>Pittsburgh, PA 15213</p>
+            </div>
+            <div class="footer-col">
+                <strong>Contact</strong>
+                <p>+1 (123) 456-7890<br>
+                   <a href="mailto:info@monomuse.org">info@monomuse.org</a></p>
+            </div>
+            <div class="footer-col">
+                <strong>Hours</strong>
+                <p>Mon-Fri: 10 AM - 6 PM<br>
+                   Sat: 9 AM - 8 PM &nbsp;·&nbsp; Sun: 11 AM - 5 PM</p>
+            </div>
+            <div class="footer-col">
+                <strong>Follow Us</strong>
+                <p>
+                    <a href="#" aria-label="MonoMuse on Instagram">Instagram</a> &nbsp;·&nbsp;
+                    <a href="#" aria-label="MonoMuse on Facebook">Facebook</a> &nbsp;·&nbsp;
+                    <a href="#" aria-label="MonoMuse on X (Twitter)">X</a>
+                </p>
+            </div>
+        </div>
+        <p id="copyYear" class="footer-copy"></p>
+    </footer>
+
+</div>
+</body>
+</html>

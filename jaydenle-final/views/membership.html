@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Jayden Lee">
+    <meta name="keywords" content="MonoMuse, membership, donation, support, museum">
+    <meta name="description" content="Support MonoMuse - become a member or make a donation to help the museum grow.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MonoMuse | Membership &amp; Donations</title>
+
+    <link rel="stylesheet" href="../static/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- google font -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+
+    <!-- jquery cdn -->
+    <script src="https://code.jquery.com/jquery-4.0.0.min.js"
+        integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao=" crossorigin="anonymous"></script>
+    <script defer src="../static/script.js"></script>
+</head>
+
+<body onload="addYear()">
+    <div class="container">
+
+        <!-- header -->
+        <header class="header">
+            <img id="logo" src="../static/PlantLogo.png" alt="MonoMuse Museum Logo">
+        </header>
+
+        <!-- navigation -->
+        <nav class="nav_bar" aria-label="Primary navigation">
+            <button class="hamburger" id="hamburger" aria-label="Open navigation menu" aria-expanded="false"
+                aria-controls="nav-list">
+                <span></span><span></span><span></span>
+            </button>
+            <ul id="nav-list">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="./explore.html">Explore</a></li>
+                <li><a href="./exhibitions.html">Exhibitions</a></li>
+                <li><a href="./membership.html" class="active">Membership</a></li>
+                <li><a href="./tickets.html" class="nav-cta">Buy Tickets</a></li>
+            </ul>
+        </nav>
+
+        <!-- page header -->
+        <div class="page-title-block">
+            <h1>Support MonoMuse</h1>
+            <p>Become a member or make a donation to help the museum grow</p>
+            <p class="page-title-sub">Your support funds exhibitions, education programs, and accessibility initiatives
+                for the entire community.</p>
+        </div>
+
+        <!-- main -->
+        <main class="main" id="main-content">
+
+            <!-- ── section 2: membership tiers ── -->
+            <section class="mem-tiers-section" aria-labelledby="tiers-heading">
+                <h2 id="tiers-heading" class="section-heading">Membership Tiers</h2>
+                <div class="mem-tier-cards">
+
+                    <!-- student member -->
+                    <div class="mem-tier-card">
+                        <div class="mem-tier-header">
+                            <h3>Student Member</h3>
+                            <p class="mem-price">$35 <span>/year</span></p>
+                        </div>
+                        <ul class="mem-benefits" aria-label="Student Member benefits">
+                            <li>Unlimited free admission</li>
+                            <li>10% off in the museum shop</li>
+                            <li>Access to member-only events</li>
+                            <li>Monthly digital newsletter</li>
+                        </ul>
+                        <a href="#donate" class="btn btn-primary mem-join-btn">Join Now</a>
+                    </div>
+
+                    <!-- individual member -->
+                    <div class="mem-tier-card mem-tier-card--featured">
+                        <div class="mem-tier-badge" aria-label="Most popular">Most Popular</div>
+                        <div class="mem-tier-header">
+                            <h3>Individual Member</h3>
+                            <p class="mem-price">$75 <span>/year</span></p>
+                        </div>
+                        <ul class="mem-benefits" aria-label="Individual Member benefits">
+                            <li>Unlimited free admission</li>
+                            <li>Two guest passes per year</li>
+                            <li>15% off shop &amp; café</li>
+                            <li>Early access to exhibitions</li>
+                            <li>Invitations to opening events</li>
+                        </ul>
+                        <a href="#donate" class="btn btn-primary mem-join-btn">Join Now</a>
+                    </div>
+
+                    <!-- patron member -->
+                    <div class="mem-tier-card">
+                        <div class="mem-tier-header">
+                            <h3>Patron Member</h3>
+                            <p class="mem-price">$200 <span>/year</span></p>
+                        </div>
+                        <ul class="mem-benefits" aria-label="Patron Member benefits">
+                            <li>Unlimited free admission for two</li>
+                            <li>Four guest passes per year</li>
+                            <li>20% off shop &amp; café</li>
+                            <li>Private curator tours on request</li>
+                            <li>Name in annual report</li>
+                        </ul>
+                        <a href="#donate" class="btn btn-primary mem-join-btn">Join Now</a>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- ── section 3: donation ── -->
+            <!-- custom dom bit -->
+            <section class="mem-donate-section" id="donate" aria-labelledby="donate-heading">
+                <h2 id="donate-heading" class="section-heading">Make a Donation</h2>
+                <div class="mem-donate-card">
+                    <p class="mem-donate-desc">
+                        Your donation directly supports our exhibitions, community education programs,
+                        and initiatives that make MonoMuse accessible to everyone — regardless of background
+                        or ability. Every contribution, large or small, makes a real difference.
+                    </p>
+
+                    <!-- preset amount buttons -->
+                    <div class="mem-amount-group" role="group" aria-label="Select donation amount">
+                        <button class="mem-amount-btn active" data-amount="10" aria-pressed="true">$10</button>
+                        <button class="mem-amount-btn" data-amount="25" aria-pressed="false">$25</button>
+                        <button class="mem-amount-btn" data-amount="50" aria-pressed="false">$50</button>
+                        <button class="mem-amount-btn" data-amount="custom" aria-pressed="false">Custom</button>
+                    </div>
+
+                    <!-- custom amount field, hidden at first -->
+                    <div class="mem-custom-wrap" id="customAmountWrap" style="display:none;">
+                        <label for="customAmount" class="sr-only">Enter custom donation amount in dollars</label>
+                        <div class="mem-custom-input-row">
+                            <span class="mem-dollar-sign" aria-hidden="true">$</span>
+                            <input type="number" id="customAmount" name="customAmount" min="1"
+                                placeholder="Enter amount" aria-label="Custom donation amount">
+                        </div>
+                    </div>
+
+                    <!-- total text -->
+                    <p class="mem-donate-total" aria-live="polite">
+                        Donating: <strong id="donateTotal">$10</strong>
+                    </p>
+
+                    <button class="btn btn-primary mem-donate-cta" onclick="submitDonation()">
+                        Donate Today
+                    </button>
+                    <p class="mem-donate-note">This is a simulated donation. No payment will be processed.</p>
+                </div>
+            </section>
+
+            <!-- ── section 4: why support monomuse ── -->
+            <section class="mem-why-section" aria-labelledby="why-heading">
+                <h2 id="why-heading" class="section-heading">Why Your Support Matters</h2>
+                <div class="mem-why-cards">
+
+                    <div class="mem-why-card">
+                        <div class="mem-why-icon" aria-hidden="true">🌿</div>
+                        <h3>Exhibitions</h3>
+                        <p>Your support funds the development and maintenance of living plant installations and rotating
+                            exhibitions that inspire visitors of all ages.</p>
+                    </div>
+
+                    <div class="mem-why-card">
+                        <div class="mem-why-icon" aria-hidden="true">🤝</div>
+                        <h3>Community Programs</h3>
+                        <p>We run school outreach, free community days, and educator workshops — all made possible by
+                            member and donor contributions.</p>
+                    </div>
+
+                    <div class="mem-why-card">
+                        <div class="mem-why-icon" aria-hidden="true">♿</div>
+                        <h3>Accessibility Initiatives</h3>
+                        <p>Donations help us provide audio guides, tactile exhibits, sensory-friendly hours, and
+                            subsidized tickets for underserved communities.</p>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- ── section 5: footer cta ── -->
+            <section class="exh-cta" aria-labelledby="mem-cta-heading">
+                <h2 id="mem-cta-heading">Thank you for supporting MonoMuse</h2>
+                <p>Your generosity keeps the museum thriving for the whole community.</p>
+                <a href="./tickets.html" class="btn btn-primary">Plan Your Visit</a>
+            </section>
+
+        </main>
+
+        <!-- footer -->
+        <footer class="footer">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <strong>MonoMuse Museum</strong>
+                    <p>123 Botanical Way<br>Pittsburgh, PA 15213</p>
+                </div>
+                <div class="footer-col">
+                    <strong>Contact</strong>
+                    <p>+1 (412) 555-0198<br>
+                        <a href="mailto:info@monomuse.org">info@monomuse.org</a>
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <strong>Hours</strong>
+                    <p>Mon-Fri: 10 AM - 6 PM<br>
+                        Sat: 9 AM - 8 PM &nbsp;·&nbsp; Sun: 11 AM - 5 PM</p>
+                </div>
+                <div class="footer-col">
+                    <strong>Follow Us</strong>
+                    <p>
+                        <a href="#" aria-label="MonoMuse on Instagram">Instagram</a> &nbsp;·&nbsp;
+                        <a href="#" aria-label="MonoMuse on Facebook">Facebook</a> &nbsp;·&nbsp;
+                        <a href="#" aria-label="MonoMuse on X (Twitter)">X</a>
+                    </p>
+                </div>
+            </div>
+            <p id="copyYear" class="footer-copy"></p>
+        </footer>
+
+    </div>
+</body>
+
+</html>

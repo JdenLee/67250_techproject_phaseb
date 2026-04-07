@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Your name">
+    <meta name="keywords" content="MonoMuse, order confirmation, ticket confirmation">
+    <meta name="description" content="Your MonoMuse ticket order has been confirmed. View your order summary.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MonoMuse | Order Confirmation</title>
+
+    <link rel="stylesheet" href="../static/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- google font -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+
+    <!-- jquery cdn -->
+    <script src="https://code.jquery.com/jquery-4.0.0.min.js"
+        integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao=" crossorigin="anonymous"></script>
+    <script defer src="../static/script.js"></script>
+</head>
+
+<body onload="addYear()">
+    <div class="container">
+
+        <!-- header -->
+        <header class="header">
+            <img id="logo" src="../static/PlantLogo.png" alt="MonoMuse Museum Logo">
+        </header>
+
+        <!-- navigation -->
+        <nav class="nav_bar" aria-label="Primary navigation">
+            <button class="hamburger" id="hamburger" aria-label="Open navigation menu" aria-expanded="false"
+                aria-controls="nav-list">
+                <span></span><span></span><span></span>
+            </button>
+            <ul id="nav-list">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="./explore.html">Explore</a></li>
+                <li><a href="./exhibitions.html">Exhibitions</a></li>
+                <li><a href="./membership.html">Membership</a></li>
+                <li><a href="./tickets.html" class="nav-cta">Buy Tickets</a></li>
+            </ul>
+        </nav>
+
+        <!-- main -->
+        <main class="main confirm-main" id="main-content">
+
+            <!-- ── section 1: confirmation header ── -->
+            <div class="confirm-header" aria-live="polite">
+                <div class="confirm-checkmark" aria-hidden="true">✓</div>
+                <h1>Order Confirmed</h1>
+                <p>Your visit to MonoMuse has been successfully reserved</p>
+            </div>
+
+            <!-- ── section 2: order summary card ── -->
+            <section class="confirm-card" aria-labelledby="summary-heading">
+                <h2 id="summary-heading">Order Summary</h2>
+
+                <div class="confirm-row">
+                    <span class="confirm-label">Visit Date</span>
+                    <span class="confirm-value" id="conf-date">—</span>
+                </div>
+                <div class="confirm-row">
+                    <span class="confirm-label">Ticket Type</span>
+                    <span class="confirm-value" id="conf-type">—</span>
+                </div>
+                <div class="confirm-row">
+                    <span class="confirm-label">Quantity</span>
+                    <span class="confirm-value" id="conf-qty">—</span>
+                </div>
+                <div class="confirm-row">
+                    <span class="confirm-label">Email Address</span>
+                    <span class="confirm-value" id="conf-email">—</span>
+                </div>
+                <div class="confirm-row">
+                    <span class="confirm-label">Mailing List</span>
+                    <span class="confirm-value" id="conf-mailing">—</span>
+                </div>
+                <div class="confirm-row confirm-total-row">
+                    <span class="confirm-label">Total Cost</span>
+                    <span class="confirm-value confirm-total" id="conf-total">—</span>
+                </div>
+            </section>
+
+            <!-- ── section 3: confirmation message ── -->
+            <div class="confirm-note" role="note">
+                <p>
+                    <strong>This is a simulated checkout confirmation.</strong>
+                    No payment has been processed. Present this confirmation upon arrival at MonoMuse.
+                    A summary has been sent to the email address provided.
+                </p>
+            </div>
+
+            <!-- ── section 4: buttons ── -->
+            <div class="confirm-actions">
+                <a href="../index.html" class="btn btn-primary">Return Home</a>
+                <a href="./exhibitions.html" class="btn btn-outline">View Exhibitions</a>
+            </div>
+
+        </main>
+
+        <!-- footer -->
+        <footer class="footer">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <strong>MonoMuse Museum</strong>
+                    <p>123 Botanical Way<br>Pittsburgh, PA 15213</p>
+                </div>
+                <div class="footer-col">
+                    <strong>Contact</strong>
+                    <p>+1 (412) 555-0198<br>
+                        <a href="mailto:info@monomuse.org">info@monomuse.org</a>
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <strong>Hours</strong>
+                    <p>Mon-Fri: 10 AM - 6 PM<br>
+                        Sat: 9 AM - 8 PM &nbsp;·&nbsp; Sun: 11 AM - 5 PM</p>
+                </div>
+                <div class="footer-col">
+                    <strong>Follow Us</strong>
+                    <p>
+                        <a href="#" aria-label="MonoMuse on Instagram">Instagram</a> &nbsp;·&nbsp;
+                        <a href="#" aria-label="MonoMuse on Facebook">Facebook</a> &nbsp;·&nbsp;
+                        <a href="#" aria-label="MonoMuse on X (Twitter)">X</a>
+                    </p>
+                </div>
+            </div>
+            <p id="copyYear" class="footer-copy"></p>
+        </footer>
+
+    </div><!-- end container -->
+</body>
+
+</html>

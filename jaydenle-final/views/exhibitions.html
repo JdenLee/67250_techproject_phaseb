@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Your name">
+    <meta name="keywords" content="MonoMuse, exhibitions, botanical art, living collections, museum">
+    <meta name="description"
+        content="Browse current exhibitions at MonoMuse - immersive botanical art, technology, and living collections.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MonoMuse | Exhibitions</title>
+
+    <link rel="stylesheet" href="../static/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- google font -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+
+    <!-- jquery cdn -->
+    <script src="https://code.jquery.com/jquery-4.0.0.min.js"
+        integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao=" crossorigin="anonymous"></script>
+    <script defer src="../static/script.js"></script>
+</head>
+
+<body onload="addYear()">
+    <div class="container">
+
+<!-- header -->
+        <header class="header">
+            <img id="logo" src="../static/PlantLogo.png" alt="MonoMuse Museum Logo">
+        </header>
+
+        <!-- navigation -->
+        <nav class="nav_bar" aria-label="Primary navigation">
+            <button class="hamburger" id="hamburger" aria-label="Open navigation menu" aria-expanded="false"
+                aria-controls="nav-list">
+                <span></span><span></span><span></span>
+            </button>
+            <ul id="nav-list">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="./explore.html">Explore</a></li>
+                <li><a href="./exhibitions.html" class="active">Exhibitions</a></li>
+                <li><a href="./membership.html">Membership</a></li>
+                <li><a href="./tickets.html" class="nav-cta">Buy Tickets</a></li>
+            </ul>
+        </nav>
+
+        <!-- page header -->
+        <div class="page-title-block">
+            <h1>Current Exhibitions</h1>
+            <p>Discover immersive botanical art, living collections, and interactive installations</p>
+            <p class="page-title-sub">Explore what's on view now at MonoMuse — from living plant installations to
+                digital botanical worlds.</p>
+        </div>
+
+        <!-- main -->
+        <main class="main" id="main-content">
+
+            <!-- ── section 2: featured exhibition (2-column) ── -->
+            <!-- lets people see what is on view fast -->
+            <section class="exh-featured" aria-labelledby="featured-heading">
+
+                <!-- big image side -->
+                <div class="exh-featured-img-wrap">
+                    <img src="../static/livingcanopy.png"
+                        alt="The Living Canopy exhibition - dense tropical foliage lit in deep green tones at MonoMuse"
+                        class="exh-featured-img">
+                    <div class="exh-featured-img-label">The Living Canopy</div>
+                </div>
+
+                <!-- text side -->
+                <aside class="exh-featured-panel">
+                    <p class="exh-label">Featured Exhibition</p>
+                    <h2 id="featured-heading">The Living Canopy</h2>
+                    <p class="exh-desc">
+                        An immersive walk-through installation recreating the layered ecosystem of a
+                        tropical rainforest canopy — from root systems to the emergent layer — using
+                        living plants, spatial audio, and responsive lighting.
+                    </p>
+                    <div class="exh-meta">
+                        <span class="exh-meta-item"><strong>Dates</strong> March 1 - June 30, 2026</span>
+                        <span class="exh-meta-item"><strong>Category</strong> Living Installation · Ecology</span>
+                    </div>
+                    <div class="exh-featured-actions">
+                        <a href="#accordion" class="btn btn-primary">Learn More</a>
+                        <a href="./tickets.html" class="btn btn-outline">Buy Tickets</a>
+                    </div>
+                </aside>
+            </section>
+
+            <!-- ── section 3: interactive gallery / slideshow ── -->
+            <!-- gallery thing from the rubric -->
+            <section class="exh-gallery-section" aria-labelledby="gallery-heading">
+                <h2 id="gallery-heading" class="section-heading">Now on View</h2>
+
+                <div class="exh-slideshow" id="exhSlideshow" aria-roledescription="carousel"
+                    aria-label="Exhibition gallery">
+
+                    <!-- slide 1 -->
+                    <article class="exh-card" role="group" aria-roledescription="slide" aria-label="Exhibition 1 of 4">
+                        <div class="exh-card-img-wrap">
+                            <img src="../static/rootsalgorithms.png"
+                                alt="Roots and Algorithms - tangled root structures visualised as glowing data networks"
+                                class="exh-card-img">
+                        </div>
+                        <div class="exh-card-body">
+                            <h3>Roots &amp; Algorithms</h3>
+                            <p>A data-art exhibition exploring parallels between root network intelligence and machine
+                                learning.</p>
+                            <p class="exh-card-date">Jan 15 - Apr 20, 2026</p>
+                            <a href="./tickets.html" class="exh-card-link">Get Tickets -></a>
+                        </div>
+                    </article>
+
+                    <!-- slide 2 -->
+                    <article class="exh-card" role="group" aria-roledescription="slide" aria-label="Exhibition 2 of 4">
+                        <div class="exh-card-img-wrap">
+                            <img src="../static/photosynthesis.png"
+                                alt="Photosynthesis Lab - visitors in a bright interactive science installation"
+                                class="exh-card-img">
+                        </div>
+                        <div class="exh-card-body">
+                            <h3>Photosynthesis Lab</h3>
+                            <p>An interactive science experience where visitors simulate light absorption and energy
+                                conversion.</p>
+                            <p class="exh-card-date">Feb 1 - May 31, 2026</p>
+                            <a href="./tickets.html" class="exh-card-link">Get Tickets -></a>
+                        </div>
+                    </article>
+
+                    <!-- slide 3 -->
+                    <article class="exh-card" role="group" aria-roledescription="slide" aria-label="Exhibition 3 of 4">
+                        <div class="exh-card-img-wrap">
+                            <img src="../static/seedoftomorrow.png"
+                                alt="Seeds of Tomorrow - large-scale seed sculptures suspended from the ceiling"
+                                class="exh-card-img">
+                        </div>
+                        <div class="exh-card-body">
+                            <h3>Seeds of Tomorrow</h3>
+                            <p>Large-scale sculptural works examining seed dispersal and the future of plant
+                                biodiversity.</p>
+                            <p class="exh-card-date">Mar 10 - Jul 14, 2026</p>
+                            <a href="./tickets.html" class="exh-card-link">Get Tickets -></a>
+                        </div>
+                    </article>
+
+                    <!-- slide 4 -->
+                    <article class="exh-card" role="group" aria-roledescription="slide" aria-label="Exhibition 4 of 4">
+                        <div class="exh-card-img-wrap">
+                            <img src="../static/bioluminesence.png"
+                                alt="Bioluminescence - glowing fungal and plant specimens in a darkened gallery at MonoMuse"
+                                class="exh-card-img">
+                        </div>
+                        <div class="exh-card-body">
+                            <h3>Bioluminescence</h3>
+                            <p>Step into the dark and witness living bioluminescent organisms alongside digitally
+                                recreated ecosystems.</p>
+                            <p class="exh-card-date">Apr 5 - Aug 30, 2026</p>
+                            <a href="./tickets.html" class="exh-card-link">Get Tickets -></a>
+                        </div>
+                    </article>
+
+                </div><!-- /#exhslideshow -->
+
+                <!-- slideshow buttons -->
+                <div class="slideshow-controls" aria-label="Gallery navigation">
+                    <button class="slide-btn" id="slidePrev" aria-label="Previous exhibitions">&#8592;</button>
+                    <div class="slide-dots" id="slideDots" aria-hidden="true"></div>
+                    <button class="slide-btn" id="slideNext" aria-label="Next exhibitions">&#8594;</button>
+                </div>
+            </section>
+
+            <!-- ── section 4: embedded video ── -->
+            <!-- embedded video from increment 5 -->
+            <section class="exh-video-section" aria-labelledby="video-heading">
+                <h2 id="video-heading" class="section-heading">Inside the Exhibition</h2>
+                <div class="exh-video-layout">
+                    <div class="video-wrapper" aria-label="Exhibition walkthrough video">
+                        <iframe src="https://www.youtube.com/embed/hfKymoH9XTc"
+                            title="MonoMuse - Inside the Exhibition walkthrough video"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                    <div class="exh-video-text">
+                        <h3>A Walk Through The Living Canopy</h3>
+                        <p>
+                            Take a guided video tour through our flagship installation. Follow our curator
+                            as she explains the ecological science behind each gallery zone — from the
+                            forest floor to the sunlit canopy ceiling.
+                        </p>
+                        <p class="exh-video-caption">Filmed on location at MonoMuse, Pittsburgh · Spring 2026</p>
+                        <p class="exh-video-invite">
+                            It looks better in person.
+                        </p>
+                        <a href="./tickets.html" class="btn btn-primary" style="margin-top:16px; display:inline-block;">
+                            Plan Your Visit
+                        </a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ── section 5: exhibition details accordion ── -->
+            <!-- jquery accordion bit -->
+            <section class="exh-accordion-section" id="accordion" aria-labelledby="accordion-heading">
+                <h2 id="accordion-heading" class="section-heading">Exhibition Details</h2>
+                <div class="accordion" id="exhAccordion">
+
+                    <div class="accordion-item">
+                        <button class="accordion-trigger" aria-expanded="false" aria-controls="acc-about">
+                            About the Exhibition
+                            <span class="accordion-icon" aria-hidden="true">+</span>
+                        </button>
+                        <div class="accordion-panel" id="acc-about" hidden>
+                            <p>The Living Canopy spans 8,000 sq ft across two gallery floors. Using over 400 living
+                                plant species,
+                                spatial audio recorded in the Amazon basin, and programmable LED canopy lighting, the
+                                installation
+                                responds dynamically to visitor movement.</p>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <button class="accordion-trigger" aria-expanded="false" aria-controls="acc-curator">
+                            Curator Notes
+                            <span class="accordion-icon" aria-hidden="true">+</span>
+                        </button>
+                        <div class="accordion-panel" id="acc-curator" hidden>
+                            <p>"I wanted visitors to feel genuinely small — in the best possible way. The canopy reminds
+                                us that
+                                human experience is one thin layer in a much older, more complex system." — Jayden Lee,
+                                Lead Curator.</p>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <button class="accordion-trigger" aria-expanded="false" aria-controls="acc-tips">
+                            Visitor Tips
+                            <span class="accordion-icon" aria-hidden="true">+</span>
+                        </button>
+                        <div class="accordion-panel" id="acc-tips" hidden>
+                            <p>Allow at least 90 minutes for The Living Canopy. Wear comfortable shoes — some sections
+                                have
+                                uneven terrain underfoot. Photography is welcome without flash. Guided tours depart at
+                                11 AM and 2 PM daily.</p>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item">
+                        <button class="accordion-trigger" aria-expanded="false" aria-controls="acc-access">
+                            Accessibility
+                            <span class="accordion-icon" aria-hidden="true">+</span>
+                        </button>
+                        <div class="accordion-panel" id="acc-access" hidden>
+                            <p>All galleries are wheelchair accessible. Audio descriptions are available via the
+                                MonoMuse mobile app.
+                                Large-print exhibition guides are available at the front desk. Tactile plant specimens
+                                are in Gallery 2.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <!-- ── section 6: bottom cta ── -->
+            <section class="exh-cta" aria-labelledby="cta-heading">
+                <h2 id="cta-heading">Ready to experience MonoMuse in person?</h2>
+                <p>Secure your tickets online and skip the queue at the door.</p>
+                <a href="./tickets.html" class="btn btn-primary">Buy Tickets</a>
+            </section>
+
+        </main>
+
+        <!-- footer -->
+        <footer class="footer">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <strong>MonoMuse Museum</strong>
+                    <p>123 Botanical Way<br>Pittsburgh, PA 15213</p>
+                </div>
+                <div class="footer-col">
+                    <strong>Contact</strong>
+                    <p>+1 (412) 555-0198<br>
+                        <a href="mailto:info@monomuse.org">info@monomuse.org</a>
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <strong>Hours</strong>
+                    <p>Mon-Fri: 10 AM - 6 PM<br>
+                        Sat: 9 AM - 8 PM &nbsp;·&nbsp; Sun: 11 AM - 5 PM</p>
+                </div>
+                <div class="footer-col">
+                    <strong>Follow Us</strong>
+                    <p>
+                        <a href="#" aria-label="MonoMuse on Instagram">Instagram</a> &nbsp;·&nbsp;
+                        <a href="#" aria-label="MonoMuse on Facebook">Facebook</a> &nbsp;·&nbsp;
+                        <a href="#" aria-label="MonoMuse on X (Twitter)">X</a>
+                    </p>
+                </div>
+            </div>
+            <p id="copyYear" class="footer-copy"></p>
+        </footer>
+
+    </div><!-- end container -->
+</body>
+
+</html>

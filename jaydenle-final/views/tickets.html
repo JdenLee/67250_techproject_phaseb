@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Jayden Lee">
+    <meta name="keywords" content="MonoMuse, buy tickets, museum tickets, botanical museum">
+    <meta name="description" content="Buy tickets online for MonoMuse - reserve your visit in advance.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MonoMuse | Buy Tickets</title>
+
+    <link rel="stylesheet" href="../static/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- google font -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+
+    <!-- jquery cdn -->
+    <script src="https://code.jquery.com/jquery-4.0.0.min.js"
+        integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao=" crossorigin="anonymous"></script>
+    <script defer src="../static/script.js"></script>
+</head>
+
+<body onload="addYear()">
+    <div class="container">
+
+        <!-- ===== header ===== -->
+        <header class="header">
+            <img id="logo" src="../static/PlantLogo.png" alt="MonoMuse Museum Logo">
+        </header>
+
+        <!-- ===== navigation ===== -->
+        <nav class="nav_bar" aria-label="Primary navigation">
+            <button class="hamburger" id="hamburger" aria-label="Open navigation menu" aria-expanded="false"
+                aria-controls="nav-list">
+                <span></span><span></span><span></span>
+            </button>
+            <ul id="nav-list">
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="./explore.html">Explore</a></li>
+                <li><a href="./exhibitions.html">Exhibitions</a></li>
+                <li><a href="./membership.html">Membership</a></li>
+                <li><a href="./tickets.html" class="nav-cta active">Buy Tickets</a></li>
+            </ul>
+        </nav>
+
+        <!-- page title -->
+        <div class="page-title-block">
+            <h1>Buy Tickets</h1>
+            <p>Reserve your visit to MonoMuse</p>
+        </div>
+
+        <!-- main -->
+        <main class="main" id="main-content">
+
+            <!-- two column layout -->
+            <div class="tickets-layout">
+
+                <!-- ── left: ticket form card ── -->
+                <section class="ticket-form-card" aria-labelledby="form-heading">
+                    <h2 id="form-heading" class="sr-only">Ticket Purchase Form</h2>
+
+                    <!-- visit date -->
+                    <div class="field-group">
+                        <label for="visitDate">Visit Date <span class="required-star"
+                                aria-hidden="true">*</span></label>
+                        <input type="date" id="visitDate" name="visitDate" required aria-required="true">
+                        <span class="field-error" id="visitDate-error" aria-live="polite"></span>
+                    </div>
+
+                    <!-- ticket type -->
+                    <div class="field-group">
+                        <label for="ticketType">Ticket Type <span class="required-star"
+                                aria-hidden="true">*</span></label>
+                        <select id="ticketType" name="ticketType" required aria-required="true"
+                            onchange="updatePrice()">
+                            <option value="general">General</option>
+                            <option value="student">Student</option>
+                            <option value="member">Member</option>
+                        </select>
+                        <span class="field-error" id="ticketType-error" aria-live="polite"></span>
+                    </div>
+
+                    <!-- ticket quantity -->
+                    <div class="field-group">
+                        <label for="ticketQty">Quantity <span class="required-star" aria-hidden="true">*</span></label>
+                        <input type="number" id="ticketQty" name="ticketQty" min="1" max="10" value="1" required
+                            aria-required="true" oninput="updatePrice()" onchange="updatePrice()">
+                        <span class="field-error" id="ticketQty-error" aria-live="polite"></span>
+                    </div>
+
+                    <!-- price box -->
+                    <div class="price-summary" id="priceSummary" aria-live="polite">
+                        <div class="price-row muted">
+                            <span>Price per ticket</span>
+                            <span id="pricePerTicket">$18</span>
+                        </div>
+                        <div class="price-row total">
+                            <span>Total</span>
+                            <span id="totalPrice">$18</span>
+                        </div>
+                    </div>
+
+                    <!-- email -->
+                    <div class="field-group">
+                        <label for="visitorEmail">Email Address <span class="required-star"
+                                aria-hidden="true">*</span></label>
+                        <input type="email" id="visitorEmail" name="visitorEmail" placeholder="your.email@example.com"
+                            required aria-required="true">
+                        <span class="field-error" id="visitorEmail-error" aria-live="polite"></span>
+                    </div>
+
+                    <!-- zip code -->
+                    <div class="field-group">
+                        <label for="zipCode">Zip Code (Optional)</label>
+                        <input type="text" id="zipCode" name="zipCode" placeholder="12345" maxlength="5"
+                            inputmode="numeric" pattern="\d{5}">
+                        <span class="field-error" id="zipCode-error" aria-live="polite"></span>
+                    </div>
+
+                    <!-- mailing list -->
+                    <div class="field-group field-group--checkbox">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="mailingList" name="mailingList">
+                            <span>Join our mailing list</span>
+                        </label>
+                    </div>
+
+                    <!-- place order button -->
+                    <button class="btn btn-primary place-order-btn" id="placeOrderBtn" onclick="placeOrder()">
+                        Place Order
+                    </button>
+
+                    <!-- general form error -->
+                    <p class="field-error form-error" id="form-error" aria-live="assertive"></p>
+                </section>
+
+                <!-- ── right: ticket info card ── -->
+                <aside class="ticket-info-card" aria-label="Ticket pricing information">
+                    <h2>Ticket Information</h2>
+                    <table class="ticket-table ticket-info-table" aria-label="Ticket types and prices">
+                        <thead>
+                            <tr>
+                                <th scope="col">Ticket Type</th>
+                                <th scope="col" style="text-align:right;">Price</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>General</td>
+                                <td style="text-align:right;">$18</td>
+                            </tr>
+                            <tr>
+                                <td>Student</td>
+                                <td style="text-align:right;">$18</td>
+                            </tr>
+                            <tr>
+                                <td>Member</td>
+                                <td style="text-align:right;">$18</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p class="ticket-info-note">All ticket types currently use flat-rate pricing of $18 per person.
+                        Children under 5 enter free.</p>
+                </aside>
+
+            </div><!-- /.tickets-layout -->
+
+        </main>
+
+        <!-- footer -->
+        <footer class="footer">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <strong>MonoMuse Museum</strong>
+                    <p>123 Botanical Way<br>Pittsburgh, PA 15213</p>
+                </div>
+                <div class="footer-col">
+                    <strong>Contact</strong>
+                    <p>+1 (412) 555-0198<br>
+                        <a href="mailto:info@monomuse.org">info@monomuse.org</a>
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <strong>Hours</strong>
+                    <p>Mon-Fri: 10 AM - 6 PM<br>
+                        Sat: 9 AM - 8 PM &nbsp;·&nbsp; Sun: 11 AM - 5 PM</p>
+                </div>
+                <div class="footer-col">
+                    <strong>Follow Us</strong>
+                    <p>
+                        <a href="#" aria-label="MonoMuse on Instagram">Instagram</a> &nbsp;·&nbsp;
+                        <a href="#" aria-label="MonoMuse on Facebook">Facebook</a> &nbsp;·&nbsp;
+                        <a href="#" aria-label="MonoMuse on X (Twitter)">X</a>
+                    </p>
+                </div>
+            </div>
+            <p id="copyYear" class="footer-copy"></p>
+        </footer>
+
+    </div>
+</body>
+
+</html>
